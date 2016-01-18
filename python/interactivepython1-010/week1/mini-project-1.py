@@ -52,7 +52,7 @@ def number_to_name(number):
     elif number == 4:
         return "scissors"
     else:
-        print "<" + number, "is not a correct number>"
+        print "<%s is not a correct number>" % number
         return None
 
 def rpsls(player_choice): 
@@ -62,6 +62,8 @@ def rpsls(player_choice):
     print "Player chooses", player_choice
     # convert the player's choice to player_number using the function name_to_number()
     player_number = name_to_number(player_choice)
+    if player_number == None:
+        return
     # compute random guess for comp_number using random.randrange()
     comp_number = random.randrange(0, 5)
     # convert comp_number to comp_choice using the function number_to_name()
